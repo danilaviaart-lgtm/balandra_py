@@ -7,11 +7,11 @@ def playgame():
     # Mensaje de Bienvenida
     print_lento("=" * 60)
     print_lento(r"""
-    ____      _      _          _      ____    ____     ___  
-    | __ )    / \    | |        / \    |  _ \  |  _ \   / _ \ 
-    |  _ \   / _ \   | |       / _ \   | | | | | |_) | | | | |
-    | |_) | / ___ \  | |___   / ___ \  | |_| | |  _ <  | |_| |
-    |____/ /_/   \_\ |_____| /_/   \_\ |____/  |_| \_\  \___/ 
+    ____  _   _  ____   _      _   _ _____ ____   ___  ____  
+    | __ )| | | |/ ___| / \    | \ | | ____|  _ \ / _ \/ ___| 
+    |  _ \| | | | |    / _ \   |  \| |  _| | |_) | | | \___ \ 
+    | |_) | |_| | |___/ ___ \  | |\  | |___|  _ <| |_| |___) |
+    |____/ \___/ \____/_/   \_\|_| \_|_____|_| \_\\___/|____/
                                                             
                 🚢 PROYECTO NAVAL INICIADO 🚢
                 🚢 EL JUEGO DE HUNDIR LA FLOTA 🚢
@@ -28,6 +28,12 @@ def playgame():
     turno = True
 
     while play:
+        print_lento("=" * 60)
+        print_lento(f"{'Generando tableros......':^60}")
+        print_lento(f"{'Generando barcos........':^60}")
+        print_lento(f"{'Generando CPU...........':^60}")               
+        print_lento("=" * 60)
+
         if turno:
             print("\n" + "=" * 41)
             print(f"{'¡TU TURNO!':^41}")
