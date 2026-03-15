@@ -49,7 +49,7 @@ def recibir_disparo(tablero, t_jugador, coordenada):
     if tablero[coordenada] == "O":
         tablero[coordenada] = "X"
         t_jugador[coordenada] = "X"
-        print("Tocado")
+        print("Que buena puntería! Tocado!!")
         return True 
     elif t_jugador[coordenada] in ["X", "A"]:
         print("Agonia, deja de perder el tiempo, dispara a otro sitio")
@@ -57,8 +57,23 @@ def recibir_disparo(tablero, t_jugador, coordenada):
     else:
         tablero[coordenada] = "A"
         t_jugador[coordenada] = "A"
-        print("Agua")
+        print("Agua!, no dejes de seguir intentadolo.. la flota sigue en pie.")
         return False
+
+# FUNCION GESTIONA DISPAROS
+
+def recibir_disparo_cpu(tablero, t_jugador, coordenada):
+    if tablero[coordenada] == "O":
+        tablero[coordenada] = "X"
+        t_jugador[coordenada] = "X"
+        return True 
+    elif t_jugador[coordenada] in ["X", "A"]:
+        return False 
+    else:
+        tablero[coordenada] = "A"
+        t_jugador[coordenada] = "A"
+        return False
+
 
 #  COLOCA BARCOS EN EL TABLERO SELECCIONADO
 
@@ -121,3 +136,47 @@ def print_lento(texto, velocidad=0.01):
         sys.stdout.flush()
         time.sleep(velocidad)
     print()
+
+# MENSAJES
+
+def gana_jugador():
+    print_lento("=" * 60)
+    print_lento("\n🏆 ¡Acabas de destruir toda la flota! ¡FELICIDADES!")
+    print_lento("=" * 60)
+
+def gana_cpu():
+    print_lento("=" * 60)
+    print_lento("\n💀 Han destruido todos tus barcos... Has perdido.")
+    print_lento("=" * 60)
+
+def print_turno_jugador():
+    print_lento("=" * 60)
+    print_lento(f"{'¡TU TURNO!':^60}")
+    print_lento("=" * 60)
+
+def print_turno_cpu():
+    print_lento("\n" + "=" * 60)
+    print_lento(f"{'¡CPU!':^60}")
+    print_lento("=" * 60)
+
+def print_bienvenida():
+    print_lento("=" * 60)
+    print_lento(r"""
+    ____  _   _  ____   _      _   _ _____ ____   ___  ____  
+    | __ )| | | |/ ___| / \    | \ | | ____|  _ \ / _ \/ ___| 
+    |  _ \| | | | |    / _ \   |  \| |  _| | |_) | | | \___ \ 
+    | |_) | |_| | |___/ ___ \  | |\  | |___|  _ <| |_| |___) |
+    |____/ \___/ \____/_/   \_\|_| \_|_____|_| \_\\___/|____/
+                                                            
+                🚢 EL JUEGO DE HUNDIR LA FLOTA 🚢
+    """)
+    print_lento("=" * 60)
+    print_lento(f"{'¡BIENVENIDO, CAPITÁN!':^60}")
+    print_lento(f"{'Prepárate para la batalla contra la CPU':^60}")
+    print_lento("=" * 60)
+
+def print_generativo():
+    print_lento("=" * 60)
+    print_lento(f"{'Generando tableros......':^60}")
+    print_lento(f"{'Generando barcos........':^60}")
+    print_lento(f"{'Generando CPU...........':^60}")    
