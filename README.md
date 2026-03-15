@@ -1,5 +1,7 @@
 # 🏴‍☠️ BUCANEROS - Hundir la Flota
 
+![Imagen Bucaneros](./img/img.png)
+
 ¡Bienvenido a **Bucaneros**! Un simulador de combate naval por turnos desarrollado en Python. Enfrentate a la CPU en una batalla de estrategia donde solo un capitán quedará a flote.
 
 ## 🚀 Características

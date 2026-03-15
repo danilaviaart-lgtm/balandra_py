@@ -26,13 +26,14 @@ def playgame():
     
     play = True if respuesta == "si" else False
     turno = True
+    print_lento("=" * 60)
+    print_lento(f"{'Generando tableros......':^60}")
+    print_lento(f"{'Generando barcos........':^60}")
+    print_lento(f"{'Generando CPU...........':^60}")               
+    print_lento("=" * 60)
 
     while play:
-        print_lento("=" * 60)
-        print_lento(f"{'Generando tableros......':^60}")
-        print_lento(f"{'Generando barcos........':^60}")
-        print_lento(f"{'Generando CPU...........':^60}")               
-        print_lento("=" * 60)
+
 
         if turno:
             print("\n" + "=" * 41)
@@ -51,9 +52,9 @@ def playgame():
             if not acertado:
                 turno = False
         else:
-            print("\n____CPU____")
+            print_lento("\n____CPU____")
             coord_maquina = generador_coord()
-            print(f"La CPU dispara a la casilla: {coord_maquina}")
+            print_lento(f"La CPU dispara a la casilla: {coord_maquina}")
             
             # La CPU dispara a tu tablero
             acertado_maquina = recibir_disparo(p1_tablero, p2_tablero_p1, coord_maquina)
@@ -61,14 +62,18 @@ def playgame():
             if not acertado_maquina:
                 turno = True
             else:
-                print("¡Que cabrón! Nos ha dado. Va a volver a disparar.")
+                print_lento("¡Que cabrón! Nos ha dado. Va a volver a disparar.")
 
         # COMPROBACIÓN DE VICTORIA
         if "O" not in p2_tablero:
-            print("\n🏆 ¡Acabas de destruir toda la flota! ¡FELICIDADES!")
+            print_lento("=" * 60)
+            print_lento("\n🏆 ¡Acabas de destruir toda la flota! ¡FELICIDADES!")
+            print_lento("=" * 60)
             play = False
         elif "O" not in p1_tablero:
-            print("\n💀 Han destruido todos tus barcos... Has perdido.")
+            print_lento("=" * 60)
+            print_lento("\n💀 Han destruido todos tus barcos... Has perdido.")
+            print_lento("=" * 60)
             play = False
 
 if __name__ == "__main__":
